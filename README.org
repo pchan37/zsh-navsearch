@@ -1,0 +1,46 @@
+* navsearch
+
+A zsh plugin that utilize the [[https://github.com/lotabout/skim][sk/skim]] interface to improve the following functions:
+- navigating directories
+- opening files
+- inserting file paths
+  
+** Installation
+   
+*** zplug
+navsearch can be installed via zplug:
+#+BEGIN_SRC
+zplug 'pchan37/zsh-navsearch', from:github
+#+END_SRC
+
+*** Manual Installation
+If installing manually, simply clone this repo and source =navsearch.plugin.zsh=.
+  
+** Dependencies
+navsearch utilizes a few binaries: [[https://github.com/sharkdp/fd][fd]], [[https://github.com/lotabout/skim][sk/skim]], and [[https://github.com/PRust-Projects/rust-enhancd][rust-enhancd]].  Pre-built version of these
+binaries are also bundled and found on the [[https://github.com/pchan37/fish-navsearch/releases][releases page]].  Opening files also requires Emacs to be
+installed right now.  Please make sure that the binaries are on the path as well.
+
+** Navigating Directories
+Utilize [[https://github.com/PRust-Projects/rust-enhancd][rust-enhancd]] to keep track of frequently accessed directories and utilize [[https://github.com/lotabout/skim][sk/skim]]
+to display the directories for selection.  Please ensure that all dependencies are installed.
+
+Default keybinding: =Alt-C=
+
+** Opening Files
+Utilizes [[https://github.com/sharkdp/fd][fd]] to find files in a directory and utilize [[https://github.com/lotabout/skim][sk/skim]] to display the directories for
+selection.  Currently opens the file via terminal emacs.  Please ensure that all dependencies are
+installed.
+
+Default keybinding for opening files in current directory: =Alt-o=
+
+Default keybinding for opening files in root directory: =Ctrl-o=
+
+** Inserting File Paths
+Utilizes [[https://github.com/sharkdp/fd][fd]] to find directories and files in a directory and utilize [[https://github.com/lotabout/skim][sk/skim]] to display
+them for selection.  The selected file paths would be inserted directly into the commandline.
+Please ensure that all dependencies are installed.
+
+Default keybinding for inserting file paths in home directory: =Alt-s=
+
+Default keybinding for inserting file paths in root directory: =Ctrl-s=
